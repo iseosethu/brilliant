@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Our microservices
     'auth_service',
+    'booking_service',
 ]
 
 MIDDLEWARE = [
