@@ -1,0 +1,18 @@
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Virtualenv
+env/
+
+# VSCode / IDEs
+.vscode/
+
+# Node
+node_modules/
+static/css/output.css
+
+# Django
+*.log
+.env
