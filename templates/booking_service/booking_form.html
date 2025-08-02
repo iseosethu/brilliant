@@ -1,18 +1,65 @@
-{% load static %}
+<!-- templates/booking_service/booking_form.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Book a Service</title>
-  <link href="{% static 'css/output.css' %}" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f1f1f1;
+    }
+    .form-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form-container h2 {
+      margin-bottom: 1.5rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e3a8a;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
-    <h2 class="text-2xl font-bold mb-4">Book a Service</h2>
-    <form method="POST" class="space-y-4">
+<body>
+  <div class="form-container">
+    <h2>Book a Service</h2>
+    <form method="POST">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Your Phone Number" required>
+
+      <select name="service_type" required>
+        <option value="">Select Service Type</option>
+        <option value="General Service">General Service</option>
+        <option value="Repair">Repair</option>
+        <option value="Oil Change">Oil Change</option>
+      </select>
+
+      <input type="date" name="preferred_date" required>
+      <input type="time" name="preferred_time" required>
+
+      <button type="submit">Submit</button>
     </form>
   </div>
 </body>

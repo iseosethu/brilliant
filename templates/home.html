@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <title>Welcome to Brilliant Bikes</title>
+  <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+<body class="bg-white text-gray-800 p-8">
+  <h1 class="text-3xl font-bold mb-4">Welcome to Brilliant Bikes</h1>
+  <p class="mb-4">Explore our services and book your appointments online.</p>
+  <div class="space-x-4">
+    <a href="{% url 'register' %}" class="text-blue-600 underline">Register</a>
+    <a href="{% url 'login' %}" class="text-green-600 underline">Login</a>
+    <a href="{% url 'book_service' %}" class="text-green-600 underline">Book Service</a>
+    <!--<a href="/booking/" class="text-purple-600 underline">Book Service</a> -->
+  </div>
+</body>
+</html>
